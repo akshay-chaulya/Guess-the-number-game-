@@ -9,7 +9,7 @@ const gameArea = document.querySelector(".gameArea");
 
 let chance = 0;
 function forOkBtn() {
-  if (0 > input.value >= 0) {
+  if (input.value < 0 || input.value > 0) {
     var inputValue = input.value;
     
     message.innerHTML = ""
@@ -32,7 +32,7 @@ function forOkBtn() {
       setTimeout(() => {
         gameArea.innerHTML = `Your Score is ${100 - chance}`
       }, 1000);
-      console.log("The number is " + rN);
+      
       setTimeout(() => {
         gameArea.innerHTML = `
         <input id="input" type="text">
@@ -41,12 +41,11 @@ function forOkBtn() {
         location.reload(true);
       }, 3000)
     }
-    // }
-    // message.innerHTML = (`The number is ${rN} \n Your Score is ${(100 - chance)}`);
-
+    
   }
   else {
     message.innerHTML = "Please enter a number"
+    input.focus()
   }
 }
 
