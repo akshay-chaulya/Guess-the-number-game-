@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gues The Number Game</title>
-    <script src="logic.js"></script>
+    <script defer src="logic.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="nav">
-
+        <h2>Welcome to Gues the Number Game</h2>
     </div>
     <div class="main">
-        <div class="gameArea">
+        <div class="message">
             
+        </div>
+        <div class="gameArea">
+            <input placeholder="Enter a number" id="input" type="text">
+            <button onclick="forOkBtn()" class="btn" id="ok">ok</button>
+            <button onclick="forCancleBtn()" class="btn" id="cancle">Cancle</button>
         </div>
     </div>
 </body>
+
 </html>

@@ -1,19 +1,86 @@
 let rN = Math.floor(Math.random() * 100);
 
-let n;
+// let n;
+// let chance = 0;
+// while (n != rN) {
+//   n = prompt("Hey Enter Your Number: ");
+//   if (n < rN) {
+//     alert("\n Computer number are big!\n");
+//   }
+//   else if (n > rN) {
+//     alert("\n Computer number are small!\n");
+//   }
+//   else {
+//     alert("\nYou enter the right number: ");
+//     console.log("The number is " + rN);
+//   }
+//   ++chance
+// }
+// console.log("Your Score is " + (100 - chance));
+
+const input = document.getElementById("input");
+const okBtn = document.getElementById("ok");
+const cancleBtn = document.getElementById("cancle");
+const message = document.querySelector(".message");
+const gameArea = document.querySelector(".gameArea");
+
 let chance = 0;
-while (n != rN) {
-  n = prompt("Hey Enter Your Number: ");
-  if (n < rN) {
-    alert("\n Computer number are big!\n");
-  }
-  else if (n > rN) {
-    alert("\n Computer number are small!\n");
+function forOkBtn() {
+  if (0 > input.value >= 0) {
+    var inputValue = input.value;
+    // console.log(inputValue)
+    message.innerHTML = ""
+    console.log(rN)
+    // while (inputValue != rN) {
+
+    ++chance
+    if (inputValue < rN) {
+      message.innerHTML = ("\n Computer number are big!\n");
+      forSetTime()
+    }
+    else if (inputValue > rN) {
+      message.innerHTML = ("\n Computer number are small!\n");
+      forSetTime()
+    }
+    else {
+      message.innerHTML = (`\nYou enter the right number: ${rN}`);
+      setTimeout(() => {
+        message.innerHTML = ""
+        input.value = "";
+      }, 2000)
+      setTimeout(() => {
+        gameArea.innerHTML = `Your Score is ${100 - chance}`
+      }, 1000);
+      console.log("The number is " + rN);
+      setTimeout(() => {
+        gameArea.innerHTML = `
+        <input id="input" type="text">
+        <button onclick="forOkBtn()" class="btn" id="ok">ok</button>
+        <button onclick="forCancleBtn()" class="btn" id="cancle">Cancle</button>`
+        location.reload(true);
+      }, 3000)
+    }
+    // }
+    // message.innerHTML = (`The number is ${rN} \n Your Score is ${(100 - chance)}`);
+
   }
   else {
-    alert("\nYou enter the right number: ");
-    console.log("The number is " + rN);
+    message.innerHTML = "Please enter a number"
   }
-  ++chance
 }
-console.log("Your Score is " + (100 - chance));
+
+function forSetTime() {
+  setTimeout(() => {
+    message.innerHTML = ""
+    input.value = "";
+    input.focus()
+  }, 1500)
+}
+
+function forCancleBtn() {
+  inputValueArr = Array.from(input.value);
+  inputValueArr.pop();
+  input.value = inputValueArr.join("");
+  input.focus()
+
+}

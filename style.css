@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: none;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.nav {
+    height: 12%;
+    background-color: red;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.main {
+    height: 88%;
+    background-color: rgba(127, 255, 212, 0.336);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.message {
+    /* background-color: black; */
+    /* min-height: 5vh;
+    min-width: 10vw; */
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 20vh;
+}
+
+.gameArea {
+    height: 30%;
+    width: 30%;
+    background-color: white;
+    box-shadow: 2px 5px 20px rgba(113, 72, 72, 0.235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#input {
+    outline: none;
+    margin-right: 10px;
+}
+
+.btn {
+    margin-right: 10px;
+    background-color: rgba(255, 0, 0, 0.74);
+    border: none;
+    padding: 4px;
+    border-radius: 2px;
+    color: white;
+}
+
+.btn:hover {
+    background-color: white;
+    border: 1px red solid;
+    color: red;
+}
