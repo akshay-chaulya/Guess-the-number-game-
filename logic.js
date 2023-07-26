@@ -11,10 +11,8 @@ let chance = 0;
 function forOkBtn() {
   if (0 > input.value >= 0) {
     var inputValue = input.value;
-    // console.log(inputValue)
+    
     message.innerHTML = ""
-    console.log(rN)
-    // while (inputValue != rN) {
 
     ++chance
     if (inputValue < rN) {
